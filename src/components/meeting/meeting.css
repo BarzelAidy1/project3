@@ -1,0 +1,27 @@
+#card {
+    width: 100vw;
+    height: 50vh;
+    border: solid gray 2px;
+    margin: 2%;
+}
+
+#image {
+    width: 100%;
+    height: 100%;
+}
+
+#details {
+    width: 50vw;
+    height: 150%;
+}
+
+#orderDetails {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+    margin-bottom: 10%;
+   
+}
+#title{
+    margin: 5%;
+}
