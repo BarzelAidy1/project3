@@ -10,11 +10,7 @@ function App() {
   }, [])
   return (
     <>
-<<<<<<< HEAD
-      chayale
-=======
-      aidy 
->>>>>>> origin/master
+      aaa
     </>
   )
 }
