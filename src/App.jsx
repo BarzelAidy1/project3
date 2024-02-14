@@ -1,7 +1,10 @@
 import { useEffect } from "react"
 import { getService } from "./data/serviceServer"
 import { Outlet } from "react-router-dom"
-import Meeting from "./components/meeting/Meeting"
+import Meeting from "./components/Meeting/Meeting"
+import MeetingList from "./components/Meeting/MeetingList"
+import AddMeeting from "./components/meeting/AddMeeting"
+
 
 function App() {
 
@@ -9,8 +12,12 @@ function App() {
     getService()
   }, [])
   return (
-    <>
-      barzel 
+    <>    
+      <Meeting/> 
+      <br/>
+      <MeetingList/>
+      
+
     </>
   )
 }

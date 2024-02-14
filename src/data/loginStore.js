@@ -11,12 +11,9 @@ class LoginStore {
         })
     }
 
-
     SetIsLogin(data) {
         this.isLogin = data;
     }
-
-
 }
 
 export default new LoginStore()

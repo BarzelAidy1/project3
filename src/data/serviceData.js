@@ -4,9 +4,9 @@ import bricha from '../assets/img/bricha.jpg';
 import logo1 from '../assets/img/logo1.jpg';
 import shlita from '../assets/img/shlita.jpg';
 import vertigo from '../assets/img/vertigo.jpg';
-class meetingData {
+class serviceData {
     //isLogin = localStorage.getItem("isLog");
-    meetingList = observable([
+    serviceList = observable([
     {
         id: '0',
         price: "2400",
@@ -53,20 +53,18 @@ class meetingData {
         describtion: "חדרי בריחה שנונים ויצירתיים במרחב הקולי, בדיגיטל ובפרונטלי- חויה עוצמתית וסוחפת בנושאים שונים",
         image: bricha,
     }
-    ]);
-
-    
+    ]);    
     constructor() {
         makeObservable(this, {
-            meetingList: observable,
-            addMeeting: action,
+            serviceList: observable,
+            addService: action,
         })
     }
 
 //functions
-    addMeeting(meeting) {
+    addService(serice) {
         
     }
 }
 
-export default new meetingData()
+export default new serviceData()

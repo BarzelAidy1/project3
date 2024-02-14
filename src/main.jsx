@@ -6,7 +6,8 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import AdminPage from './components/admin/AdminPage.jsx';
 import EditBusinessData from './components/businessData/EditBusinessData.jsx';
 import BusinessData from './components/businessData/BusinessData.jsx';
-import Meeting from './components/meeting/Meeting.jsx';
+import Meeting from './components/Meeting/Meeting.jsx';
+import Service from './components/Service/Service.jsx';
 
 const routes = createBrowserRouter([{
 
@@ -18,8 +19,8 @@ const routes = createBrowserRouter([{
   path: "/admin",
   element: <AdminPage />,
 
-  children: [{ path: "service", element: <EditBusinessData /> },
-  {path:"meetings", element:<Meeting />},],
+  children: [{ path: "service1", element: <EditBusinessData /> },
+  {path:"service", element:<Service />},],
   //errorElement:<ErorNotFound />
 }])
 

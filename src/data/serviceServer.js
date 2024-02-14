@@ -15,7 +15,6 @@ export const AddService = async (addData) => {
     try {
         const data = await axios.post('http://localhost:8787/service',addData);
         console.log(data.data)
-
         //add to store globale
     }
     catch (e) {
