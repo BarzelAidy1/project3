@@ -3,6 +3,7 @@ import BuisnesDataStore from "../../data/BuisnesDataStore"
 import { observer } from "mobx-react"
 import { Link, Outlet } from "react-router-dom"
 import { getBuisneData } from "../../data/BuisnesDataServer"
+import MeetingList from "../Meeting/MeetingList"
 
 const BusinessData = observer(() => {
 
@@ -22,6 +23,7 @@ const BusinessData = observer(() => {
       :פרטים נוספים{BuisnesDataStore.data.information}
       <hr />
       <Link to="service" >to service</Link>
+      {/*<MeetingList meetings={meetings} />*/}
 
       
     </>
