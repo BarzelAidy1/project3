@@ -4,15 +4,14 @@ import bricha from '../assets/img/bricha.jpg';
 import logo1 from '../assets/img/logo1.jpg';
 import shlita from '../assets/img/shlita.jpg';
 import vertigo from '../assets/img/vertigo.jpg';
-class serviceData {
-    //isLogin = localStorage.getItem("isLog");
-    serviceList = observable([
+
+const defaultService=[
     {
         id: '0',
         price: "2400",
         name: "ורטיגו",
         describtion: " תוכנית לימודית בנושא זהירות מזרים מתבססת על שיטת שלושת הלמדים: 'לצעוק', 'לברוח' ו'לספר'. התוכנית מעבירה בצורה חוייתית ואטרקטיבית את כללי הזהירות עפ,י הנחיית יועצים/ות מהשורה הראשונה, באישור גדולי ישראל ובפיקוח מפקחות ממשרד החינוך בנושא מוגנות",
-        age:"יסודי-שכבה נמוכה",
+        age: "יסודי-שכבה נמוכה",
         image: vertigo,
     },
     {
@@ -20,7 +19,7 @@ class serviceData {
         price: "2500",
         name: "אדמה ושמים",
         describtion: "תוכנית חוויתית בנושא שמיטה להקניית הלכות בסיסיות לילדים תוך חיבור אמיתי והבנת ערך מצוה קדושה זו.",
-        age:"יסודי- שכבה בינונית",
+        age: "יסודי- שכבה בינונית",
         image: adama,
     },
     {
@@ -28,7 +27,7 @@ class serviceData {
         price: "1800",
         name: "הכל בשליטה",
         describtion: "תוכנית מסך, קהל ובמה חוייתית ויחודית בנושא אמונה ",
-        age:"שכבת יסודי הגבוהה",
+        age: "שכבת יסודי הגבוהה",
         image: shlita,
     },
     {
@@ -53,17 +52,23 @@ class serviceData {
         describtion: "חדרי בריחה שנונים ויצירתיים במרחב הקולי, בדיגיטל ובפרונטלי- חויה עוצמתית וסוחפת בנושאים שונים",
         image: bricha,
     }
-    ]);    
+]
+class serviceData {
+    //isLogin = localStorage.getItem("isLog");
+    serviceList = [];
     constructor() {
         makeObservable(this, {
             serviceList: observable,
             addService: action,
+            setServices: action
         })
     }
-
-//functions
+    setServices(data) {
+        this.serviceList =[...defaultService,...data];
+    }
+    //functions
     addService(serice) {
-        
+        this.serviceList = [...this.serviceList, serice]
     }
 }
 
