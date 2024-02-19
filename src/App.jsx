@@ -1,18 +1,21 @@
-import { useEffect } from "react"
-import { getService } from "./data/serviceServer"
-import { Outlet } from "react-router-dom"
-import Meeting from "./components/meeting/Meeting"
+import BusinessData from "./components/businessData/BusinessData"
+import Service from "./components/Service/Service"
+
 
 function App() {
+  
 
-  useEffect(() => {
-    getService()
-  }, [])
   return (
     <>
+<<<<<<< HEAD
       aaa
+=======
+      <BusinessData />
+      <br />
+      <Service />
+>>>>>>> aidy
     </>
-  )
+  );
 }
 
 export default App

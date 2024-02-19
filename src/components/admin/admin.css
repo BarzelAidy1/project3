@@ -1,10 +1,8 @@
 #buttonLogin {
-    color: rgb(74, 74, 216);
+    color: rgb(255, 60, 157);
     /* position: absolute; */
     left: 50%;
-
-    transform: translate(-50%);
-
+    transform: translate(-50%);    
 }
 
 #loginForm {
@@ -16,8 +14,6 @@
     display: flex;
     justify-content: center;
     position: absolute;
-
-
 }
 
 #password {

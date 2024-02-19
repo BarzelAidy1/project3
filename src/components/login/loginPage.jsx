@@ -2,9 +2,7 @@ import { useState } from "react"
 import { setLogin } from "../../data/loginServer"
 import { Box, Button, Stack, TextField } from "@mui/material"
 
-
 const LoginPage = () => {
-
 
   const handleLogin = (e) => {
     e.preventDefault()
@@ -12,7 +10,6 @@ const LoginPage = () => {
   }
   const [name, setName] = useState('')
   const [password, setPassword] = useState('')
-
   
   return <Box
     component="form"

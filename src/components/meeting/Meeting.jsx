@@ -1,48 +1,41 @@
-import { observer } from "mobx-react"
-import { useTheme } from '@mui/material/styles';
-import meetingData from "../../data/meetingData";
-import './Meeting.css'
-import { Button, Card, CardActionArea, CardActions, CardContent, CardMedia, Typography} from "@mui/material";
+import React, { useState } from 'react';
+import AddMeeting from './AddMeeting';
+import { Button } from '@mui/material';
 
-const Meeting = (observer(() => {
-  
-  const theme = useTheme();
-  
+
+const Meeting = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleReservation = (formData) => {
+    // Handle reservation logic here
+    alert('Service reserved!');
+    console.log(formData); // For example, log the form data
+    closeModal(); // Close modal after reservation
+  };
+
   return (
-      <>
-          {meetingData.meetingList.map((details, id) => {
-              return (
-                <Card id="card" sx={{ maxWidth: 150 }}>
-                  <CardActionArea>
-                    <CardMedia id="image"
-                      component="img"
-                      height="140"
-                      image ={details.image}
-                      alt="עוצמה של הפקה"
-                    />
-                    <CardContent id="orderDetails">
-                      <Typography gutterBottom variant="h5" component="div">
-                        {details.name}
-                      </Typography>
-                      <Typography variant="body2" color="text.secondary">
-                        {details.describtion}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      להזמנה
-                    </Button>
-                  </CardActions>
-                </Card>
+    <div>
+      <Button variant="contained" onClick={openModal} >הזמנת תוכנית</Button>     
+  
+      {isModalOpen && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={closeModal}>&times;</span>
+            <h2>פרטי הזמנת תוכנית</h2>
+            <AddMeeting onReservation={handleReservation} />
+          </div>
+        </div>
+      )}
+    </div>
+  );
+};
 
-              )
-          }
-          
-          )}
-       
-      </>
-  )
-}))
-
-  export default Meeting
+export default Meeting;

@@ -3,6 +3,10 @@ import BuisnesDataStore from "../../data/BuisnesDataStore"
 import { observer } from "mobx-react"
 import { Link, Outlet } from "react-router-dom"
 import { getBuisneData } from "../../data/BuisnesDataServer"
+import MeetingList from "../Meeting/MeetingList"
+import { Box, ListItem, ListItemIcon } from "@mui/material"
+import { ListItemText } from "@mui/material-next"
+import { List } from "@mui/icons-material"
 
 const BusinessData = observer(() => {
 
@@ -15,14 +19,16 @@ const BusinessData = observer(() => {
 
   return (
     <>
-      :שם העסק{BuisnesDataStore.data.name}
-      :בעל העסק{BuisnesDataStore.data.adminName}
-      :כתובת{BuisnesDataStore.data.adress}
-      :טלפון{BuisnesDataStore.data.phone}
-      :פרטים נוספים{BuisnesDataStore.data.information}
-      <hr />
-      <Link to="service" >to service</Link>
+    <ListItem component="a" href="#simple-list">
+      <ListItemText primary="בעל העסק:"secondary= {BuisnesDataStore.data.adminName} />
+      
+       <ListItemText primary="כתובת:" secondary={BuisnesDataStore.data.adress} />    
+       <ListItemText primary="טלפון:" secondary={BuisnesDataStore.data.phone} />     
 
+       <ListItemText primary="פרטים נוספים:" secondary={BuisnesDataStore.data.information} />        
+     
+      </ListItem>
+      <br />    
       
     </>
   )
